@@ -193,6 +193,30 @@
             </div>
         </section>
     </div>
+<!-- Osano CookieConsent Start -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+    palette: {
+      popup: { background: "#23272b" },
+      button: { background: "#2374ab", text: "#fff" }
+    },
+    theme: "classic",
+    position: "bottom",
+    type: "opt-in",
+    content: {
+      message: "This website uses cookies to enhance your experience.",
+      dismiss: "Accept",
+      deny: "Decline",
+      link: "Learn more",
+      href: "privacy.html"
+    }
+  })
+});
+</script>
+<!-- Osano CookieConsent End -->
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/parallax.js"></script>
     <script src="js/scripts.js"></script>
