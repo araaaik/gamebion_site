@@ -1,0 +1,44 @@
+/*! Place your custom styles here */
+.feature-6 .icon--sm {
+  font-size: 3em;
+}
+
+@media (max-width: 767px) {
+  .feature-row {
+    flex-wrap: wrap !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .feature-6-col {
+    width: 50% !important;
+    max-width: 50% !important;
+    flex: 0 0 50% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+  }
+  .feature-6 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .feature-section-container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .height-70 {
+    height: 50vh !important;
+    min-height: 50vh !important;
+    display: flex;
+    align-items: center;
+  }
+  .height-70 .container.pos-vertical-center {
+    top: 0 !important;
+    transform: none !important;
+    position: static !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+}
