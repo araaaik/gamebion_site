@@ -42,3 +42,34 @@
     height: 100%;
   }
 }
+.btn-disabled-custom,
+.btn[disabled],
+button[disabled] {
+  background: #b3b3b3 !important;
+  border-color: #b3b3b3 !important;
+  color: #fff !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transition: none !important;
+  filter: none !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+.btn-disabled-custom:hover,
+.btn[disabled]:hover,
+button[disabled]:hover,
+.btn-disabled-custom:focus,
+.btn[disabled]:focus,
+button[disabled]:focus,
+.btn-disabled-custom:active,
+.btn[disabled]:active,
+button[disabled]:active {
+  background: #b3b3b3 !important;
+  border-color: #b3b3b3 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  transition: none !important;
+  filter: none !important;
+  transform: none !important;
+  outline: none !important;
+}

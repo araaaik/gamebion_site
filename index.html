@@ -93,8 +93,101 @@
                             <div class="col-md-6 col-12"> <label>Your Name:</label> <input type="text" name="name" class="validate-required"> </div>
                             <div class="col-md-6 col-12"> <label>Email Address:</label> <input type="email" name="email" class="validate-required validate-email"> </div>
                             <div class="col-md-12 col-12"> <label>Message:</label> <textarea rows="4" name="Message" class="validate-required"></textarea> </div>
-                            <div class="col-md-5 col-lg-4 col-6"> <button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button> </div>
+                            <div class="col-md-5 col-lg-4 col-6"> <button type="submit" class="btn btn--primary type--uppercase" id="send-enquiry-btn">Send Enquiry</button> </div>
+                            <div class="col-12 mt-3">
+                              <div class="form-check d-flex align-items-center">
+                                <input class="form-check-input" type="checkbox" id="privacyCheck" checked>
+                                <label class="form-check-label ms-2" for="privacyCheck" style="margin-bottom:0;">
+                                  By submitting this form, you agree to our <a href="privacy.html" target="_blank">Privacy Policy</a>.
+                                </label>
+                              </div>
+                            </div>
                         </form>
+                        <style>
+                        .form-check-label {
+                          font-weight: 400;
+                          font-size: 14px;
+                        }
+                        /* Фикс для видимости чекбокса Bootstrap и аккуратный минималистичный стиль */
+                        .form-check-input[type="checkbox"] {
+                          opacity: 1 !important;
+                          height: 20px !important;
+                          width: 20px !important;
+                          position: relative !important;
+                          appearance: none;
+                          -webkit-appearance: none;
+                          background-color: #fff;
+                          border: 2px solid #b3b3b3;
+                          border-radius: 4px;
+                          cursor: pointer;
+                          transition: border-color 0.2s, background 0.2s;
+                          vertical-align: middle;
+                          margin-top: 0;
+                          box-shadow: none;
+                          margin-right: 12px;
+                          display: inline-block;
+                          box-sizing: border-box;
+                        }
+                        .form-check-input[type="checkbox"]:checked {
+                          background-color: #2374ab;
+                          border-color: #2374ab;
+                        }
+                        .form-check-input[type="checkbox"]:checked:after {
+                          content: '';
+                          position: absolute;
+                          left: 50%;
+                          top: 50%;
+                          width: 6px;
+                          height: 11px;
+                          border: solid #fff;
+                          border-width: 0 3px 3px 0;
+                          transform: translate(-50%, -50%) rotate(45deg);
+                          display: block;
+                          z-index: 2;
+                          pointer-events: none;
+                        }
+                        </style>
+                        <script>
+                        // Privacy Policy checkbox logic
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var privacyCheck = document.getElementById('privacyCheck');
+                            var sendBtn = document.getElementById('send-enquiry-btn');
+                            function toggleButton() {
+                                if (!privacyCheck.checked) {
+                                    sendBtn.disabled = true;
+                                    sendBtn.classList.add('btn-disabled-custom');
+                                    sendBtn.setAttribute('title', 'You must agree to the Privacy Policy');
+                                } else {
+                                    sendBtn.disabled = false;
+                                    sendBtn.classList.remove('btn-disabled-custom');
+                                    sendBtn.removeAttribute('title');
+                                }
+                            }
+                            privacyCheck.addEventListener('change', toggleButton);
+                            toggleButton(); // Initial state
+                        });
+                        </script>
+                        <style>
+                        .btn-disabled-custom,
+                        .btn[disabled],
+                        button[disabled] {
+                          background: #b3b3b3 !important;
+                          border-color: #b3b3b3 !important;
+                          color: #fff !important;
+                          cursor: not-allowed !important;
+                          box-shadow: none !important;
+                          transition: none !important;
+                        }
+                        .btn-disabled-custom:hover,
+                        .btn[disabled]:hover,
+                        button[disabled]:hover {
+                          background: #b3b3b3 !important;
+                          border-color: #b3b3b3 !important;
+                          color: #fff !important;
+                          box-shadow: none !important;
+                          transition: none !important;
+                        }
+                        </style>
                     </div>
                 </div>
             </div>
@@ -103,5 +196,17 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/parallax.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+    // Privacy Policy checkbox logic
+    document.addEventListener('DOMContentLoaded', function() {
+        var privacyCheck = document.getElementById('privacyCheck');
+        var sendBtn = document.getElementById('send-enquiry-btn');
+        function toggleButton() {
+            sendBtn.disabled = !privacyCheck.checked;
+        }
+        privacyCheck.addEventListener('change', toggleButton);
+        toggleButton(); // Initial state
+    });
+    </script>
 </body>
 </html>
